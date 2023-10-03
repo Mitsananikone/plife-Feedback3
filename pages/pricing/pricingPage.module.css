@@ -1,0 +1,163 @@
+/* Container Styles */
+.pricingContainer {
+  width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0rem;
+    padding-bottom: 10vh;
+ 
+  }
+  .bannerContainer {
+    position: relative;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    height: 300px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    margin-top: -10vh;
+    
+    
+}
+
+.priceBanner {
+
+  position: relative;
+  width: 100vw;
+  object-fit: cover;
+  margin-bottom: 2rem;
+  height: 300px;
+  
+}
+
+  /* Title Styles */
+  .pricingTitle {
+    position: absolute;
+    font-size: 2.5rem;
+    color: #333;
+    margin-top: 5rem;
+    text-shadow: 
+      -1px -1px 3px gold, 
+      1px -1px 3px gold, 
+      -1px 1px 3px gold, 
+      1px 1px 3px gold;
+  }
+  
+  /* Table Styles */
+  .package {
+    width: 80%;
+    /* max-width: 1200px; */
+    margin-top: 3rem;
+    /* margin-bottom: 2rem; */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border: 0.5px solid gray
+  }
+  
+  .package h2 {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .package table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+  }
+  
+  .package th, .package td {
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  .package th {
+    background-color: #ecf0f1;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .package td {
+    color: #555;
+  }
+  
+  .package tbody tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+
+/* Media Queries */
+@media screen and (min-width: 1440px) {
+    .bannerContainer {
+        width: 100vw;
+        height: 300px;
+        margin: auto;
+        margin-top: -10vh;
+    }
+    .pricingTitle {
+      font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 1439px) {
+  .bannerContainer {
+    width: 100vw;
+    height: 300px;
+    margin: auto;
+    margin-top: -10vh;
+}
+  .pricingTitle {
+    font-size: 3rem;
+}
+}
+
+@media screen and (max-width: 991px) {
+  .bannerContainer {
+    height: 180px;
+}
+    .pricingTitle {
+      font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+  .bannerContainer {
+    height: 180px;
+
+}
+    .pricingTitle {
+      font-size: 1.5rem;
+    }
+    .package th, .package td {
+        padding: 0.2rem;  /* Adjust the padding to make cells less wide */
+    }
+      /* .package tbody tr {
+        font-size: 0.8rem;
+      } */
+}
+
+@media screen and (max-width: 479px) {
+  .bannerContainer, .priceBanner {
+    height: 150px;
+  }
+
+    .package {
+        height: fit-content;
+    }
+    .package h2 {
+        padding: 1rem;
+        font-size: 1rem;
+
+      }
+    .pricingTitle {
+      font-size: 1.2rem;
+    }
+    .package th, .package td {
+        padding: 0rem;  
+        font-size: 0.5rem;
+    }
+}

@@ -1,0 +1,60 @@
+.titleContact {
+  font-family: 'Roboto', sans-serif;
+  text-align: middle;
+  font-size: large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  letter-spacing: 1px;
+  line-height: 1;
+  z-index: 9;
+}
+
+.titleContact div {
+  background-image: url('/images/nav/contactFire.gif');
+  font-weight: 900;
+  color: rgba(255, 215, 0, 0.5);;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  font-size: larger;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Laptop */
+@media screen and (min-width: 1440px) {
+  .titleContact div {
+font-size: x-large;
+  }
+
+}
+
+@media screen and (max-width: 1439px) {
+  .titleContact div {
+    font-size: large;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .titleContact div {
+     font-size: large;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+  .titleContact div {
+    font-size: larger;
+ }
+}
+
+@media screen and (max-width: 479px) {
+
+} 
+
+@media screen and (max-width: 319px) {
+
+}

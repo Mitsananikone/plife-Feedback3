@@ -1,0 +1,36 @@
+.footerContainer {
+    position: relative;
+    bottom: 0;
+    left: 0;  /* Aligns the container to the left; can adjust or remove if not required */
+    right: 0;
+    font-size: small;
+    color: white;
+    background-color: black;
+    min-height: 3vh;
+    text-shadow:
+        2px 2px 4px rgba(0, 0, 0, 0.1),
+        0px 0px 8px rgba(0, 0, 0, 0.2),
+        -1px -1px 0 rgba(255, 255, 255, 0.5);
+    z-index: 999999;
+}
+
+.footerContent {
+    padding-top: 5px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.footerContent > span {
+    font-size: x-small;
+}
+
+@media screen and (max-width: 479px) {
+    .footerContainer {
+    height: 3vh;
+    }
+    /* .footerContent > h6 {
+        margin-top: 5px;
+        font-size: x-small;
+    } */
+}

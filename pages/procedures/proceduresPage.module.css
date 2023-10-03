@@ -1,0 +1,229 @@
+.procedureComponent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 50vw;
+    /* margin-left: 30vw; */
+    /* backdrop-filter: blur(5px);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.3); */
+    z-index: 9999;
+    margin-left: 30vw;
+}
+
+.cldImageFullscreen {
+    position: absolute;
+    top: -10vh;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; 
+  }
+
+  .backgroundImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+
+.proceduresHighlight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: transparent;
+    width: 100%; /* ensure the container takes the full width of its parent */
+}
+
+.imageContainer {
+    
+    height: 100vh; /* Full viewport height */
+    width: 100%; /* Full width of its parent, adjust as necessary */
+    border: 3px solid blue;
+  }
+
+.headerText {
+    font-size: 1rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    text-align: center;
+    color: #E5E7EB;
+    letter-spacing: 0.1rem;
+}
+
+.mainTitle > h1 {
+    margin-top: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: #E5E7EB;
+    white-space: nowrap;  
+    overflow: hidden;     
+    font-size: calc(2rem + 2vw); 
+}
+
+.highlightText {
+    display: grid;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    margin-top: 3rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 700;
+    color: #9CA3AF;
+    gap: 1rem;
+}
+
+.text_left {
+    text-align: left; /* This ensures the text on the left side aligns to the left */
+    justify-self: start; /* In the context of the grid, this aligns the item to the left of its grid cell */
+}
+
+.text_right {
+    text-align: right; /* This ensures the text on the right side aligns to the right */
+    justify-self: end; /* In the context of the grid, this aligns the item to the right of its grid cell */
+}
+
+
+.headerText,
+.proceduresHighlight,
+.mainTitle {
+    width: 100%;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+    color: #D1D5DB;
+    text-shadow: 
+    1px 1px 0px #fff, 
+    1.5px 1.5px 0px #888, 
+    2px 2px 0px #555, 
+    2.5px 2.9px 0px #222;
+}
+
+.detailsButtonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    z-index: 99999;
+}
+
+.detailsButton {
+    padding: 0.5rem 1rem;
+    margin-bottom: 2rem;
+    border-radius: 0.25rem;
+    width: 12rem;
+    height: 3rem;
+    font-weight: 700;
+    color: #000000;
+    white-space: nowrap;
+    background-color: #D1D5DB;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    opacity: 0.6;
+    cursor: pointer;
+    z-index: 99999999;
+   
+}
+
+.detailsButton:hover {
+    color: #374151;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+
+
+
+@media screen and (min-width: 1440px) {
+    .procedureComponent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50vw;
+        margin-left: 30vw;
+    }
+    .mainTitle > h1 {
+        font-size: 4.5rem;   
+    }
+  }
+  
+  @media screen and (max-width: 1439px) {
+    .procedureComponent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50vw;
+        margin-left: 30vw;
+    }
+    .mainTitle > h1 {
+        font-size: 3.1rem;   
+    }
+    .highlightText {
+        font-size: 1.8em;
+    }
+  }
+  
+  @media screen and (max-width: 991px) {
+    .procedureComponent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70vw;
+        margin-left: 20vw;
+    }
+    .mainTitle > h1 {
+        font-size: 3rem;   
+    }
+    .highlightText {
+        font-size: 1.5em;
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .procedureComponent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90vw;
+        margin-left: 0;
+    }
+    .proceduresHighlight{
+        margin-top: -64px;
+    }
+    .mainTitle > h1 {
+        font-size: 2rem;   
+    }
+    .highlightText {
+        font-size: 1.em;
+    }
+  }
+  
+  @media screen and (max-width: 479px) {
+    .procedureComponent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90vw;
+        margin-left: 0;
+    }
+    .headerText{
+        font-size: X-small
+    }
+    .mainTitle > h1 {
+        font-size: 1.5rem;   
+    }
+    .highlightText {
+        font-size: 0.8em;
+    }
+  }
+  

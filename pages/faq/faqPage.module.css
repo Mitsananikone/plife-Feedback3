@@ -1,0 +1,119 @@
+.faqContainer {
+    width: 100%;
+    padding: 0rem;
+}
+
+.bannerContainer {
+    position: relative;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    height: 300px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    margin-top: -10vh;
+
+}
+
+.faqBanner {
+    position: relative;
+    width: 100vw;
+    object-fit: cover;
+    height: 300px;
+  }
+
+.faqTitle {
+    position: absolute;
+    font-size: 2.5rem;
+    color: #333;
+    margin-top: 5rem;
+    text-shadow: 
+      -1px -1px 3px gold, 
+      1px -1px 3px gold, 
+      -1px 1px 3px gold, 
+      1px 1px 3px gold;
+}
+
+.faqContent {
+    margin-inline: 2rem;
+
+}
+
+.questionAnswerContainer {
+    margin-inline: 10rem;
+    margin-bottom: 10vh;
+}
+
+.question {
+    cursor: pointer;
+    font-weight: 500;
+    margin-top: 1.5rem;
+}
+
+.arrowIcon {
+    margin-left: 10px;
+}
+
+.answer {
+    margin-top: 0.5rem;
+    margin-inline: 2rem;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transform: translateY(-20px);  /* Pulls the content up initially */
+    transition: 
+        opacity 1s ease, 
+        max-height 1s ease, 
+        transform 1s ease;
+}
+
+.visible {
+    opacity: 1;
+    max-height: max-content;  /* Adjust as needed, it should accommodate the average answer's height */
+    transform: translateY(0px);
+}
+
+/* Media Queries */
+@media screen and (min-width: 1440px) {
+    .faqBanner,.bannerContainer {
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 1439px) {
+    .faqBanner,.bannerContainer {
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .faqBanner,.bannerContainer {
+        height: 180px;
+    }
+    .faqTitle {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .faqBanner,.bannerContainer {
+        height: 180px;
+    }
+    .faqTitle {
+        font-size: 1.5rem;
+    }
+    .questionAnswerContainer {
+    margin-inline: 2rem;
+    height: max-content;
+    }
+    
+}
+
+@media screen and (max-width: 479px) {
+    .faqBanner,.bannerContainer {
+        height: 150px;
+    }
+    .faqTitle {
+        font-size: 1.2rem;
+    }
+}

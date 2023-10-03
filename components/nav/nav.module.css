@@ -1,0 +1,310 @@
+.nav {
+    position: sticky;
+    top: 0;
+    padding: 1rem;
+    z-index: 100;
+     overflow: hidden;
+     background-color: transparent !important;
+}
+
+.navContainer {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+}
+
+.navContainer>div {
+    display: flex;
+}
+
+.navItem {
+    display: inline-flex;
+    font-size: large;
+    /* line-height: 1.75rem; */
+    text-transform: uppercase;
+    cursor: pointer;
+    
+    transition: all 0.3s ease;
+    height: 100%;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.navItem:hover {
+    color: gold;
+    transition: 0.5s ease;
+}
+
+.navItemHamburger {
+    padding-right: 20px;
+    position: fixed;
+    overflow: visible;
+    display: flex;
+    padding-right: 0;
+    align-items: flex-end;
+    justify-content: flex-end;
+    /* Right aligns the items */
+    box-sizing: border-box;
+    height: min-content;
+    /* position: absolute; */
+    top: 50px;
+    left: 0;
+    right: 0;
+    transition: transform 2s ease-out;
+    z-index: 999999;
+    opacity: 1;
+
+}
+
+
+.hamburger {
+    display: flex;
+    padding-left: 32px;
+    align-items: middle;
+    justify-content: space-between;
+    text-align: right;
+    display: none;
+    width: 80vw;
+}
+
+.hamburgerButton {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    border: none;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    transform: scale(0.8);
+    z-index: 30;
+}
+
+.hamburgerButton:hover div {
+    background: transparent;
+}
+
+.title {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 1rem;
+    color: #696969;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 1px;
+    text-decoration: none;
+    /* border: 1px solid red; */
+    height: auto;
+    line-height: 2;
+    display: flex;
+    align-items: middle;
+    justify-content: center;
+    transform: translateX(0);
+    opacity: 0;
+    text-decoration: none;
+    /* transition: opacity 0.3s, transform 0.3s; */
+}
+
+
+@keyframes fadeInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes fadeOutToRight {
+
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hamburgerButton .navContainer>div {
+    display: none;
+    /* Hide the regular menu items on medium screen */
+}
+
+.hamburgerButton .navContainer>button {
+    display: block;
+    /* Show the hamburger button on medium screen */
+}
+
+/* Laptop */
+@media screen and (min-width: 1440px) {
+    .navItemHamburger span {
+        display: none;
+    }
+
+
+
+    .navItem span {
+        display: inline-flex;
+        margin-left: 3%;
+        padding: 0.1em;
+        font-size: x-large;
+
+    }
+}
+
+@media screen and (max-width: 1439px) {
+    .navItemHamburger span {
+        display: none;
+    }
+
+    .navItem span {
+        display: inline-flex;
+        margin-left: 3%;
+        padding: 0.1em;
+        font-size: larger;
+    }
+}
+
+@media screen and (max-width: 991px) {
+
+    .navItem {
+        padding: 0;
+        font-size: large;
+    }
+
+    .navItemHamburger span {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .navItem {
+        color: white;
+        background: linear-gradient(to bottom,  white,gold, white);
+    /* Make sure the text is displayed on top of the gradient */
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+
+    .navContainer>div {
+        display: none;
+        /* background-color: red; */
+    }
+
+  
+    .navItemHamburger {
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: flex-end;
+        width: 100%;
+        transition: transform 0.5s ease-out;
+        background-color: transparent;
+        height: min-content;
+    }
+
+    .navItemHamburger .title {
+        text-shadow: 0 0 5px rgba(255, 255, 102, 0.5),
+            0 0 8px rgba(255, 255, 102, 0.5),
+            0 0 9px rgba(255, 255, 102, 0.5),
+            0 0 10px rgba(255, 255, 102, 0.5);
+        margin-right: 20px;
+        opacity: 0;
+        animation: fadeInFromRight 0.5s forwards;
+        animation-delay: calc(0.15s * var(--index));
+    }
+
+
+
+
+    .navContainer>button {
+        display: block;
+    }
+
+
+    .navItemHamburger.opening .title {
+        text-shadow: 0 0 5px rgba(255, 255, 102, 0.5),
+            0 0 8px rgba(255, 255, 102, 0.5),
+            0 0 9px rgba(255, 255, 102, 0.5),
+            0 0 10px rgba(255, 255, 102, 0.5);
+        margin-right: 20px;
+        opacity: 0;
+        animation: fadeInFromRight 0.5s forwards;
+        animation-delay: calc(0.15s * var(--index));
+    }
+
+    .navItemHamburger.opening .title:hover {
+        color: gold;
+
+    }
+
+
+    .navItemHamburger.closing .title {
+        text-shadow: 0 0 5px rgba(255, 255, 102, 0.5),
+            0 0 8px rgba(255, 255, 102, 0.5),
+            0 0 9px rgba(255, 255, 102, 0.5),
+            0 0 10px rgba(255, 255, 102, 0.5);
+        margin-right: 20px;
+        opacity: 1;
+        animation: fadeOutToRight 0.5s forwards;
+        animation-delay: calc(0.15s * (var(--total-items) - var(--index)));
+
+    }
+
+    .navItemHamburger:not(.closing):not(.opening) .title {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .nav {
+        /* border: 2px solid green; */
+    }
+
+    .navItem {
+        padding: 0;
+        font-size: small;
+    }
+}
+
+@media screen and (max-width: 319px) {
+    .nav {
+        /* border: 2px solid blue; */
+    }
+
+    .navItem {
+        padding: 0;
+        font-size: small;
+    }
+}

@@ -1,0 +1,164 @@
+.popupOverlay {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/images/home/home1.webp');
+    width: 100vw;
+    height: 100vh;
+    margin-top: 15vh;
+    background-position: center;
+    background-size: cover;
+    z-index: 99999;
+overflow:visible;
+    
+}
+
+.popupContent {
+    width: 95vw;
+    height: 91vh;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    background-image: url('/images/home/landingPopup.png');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+   
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Offset-x | Offset-y | Blur-radius | Color */
+    z-index: 9999; 
+}
+
+.popupContent:hover {
+    transform: scale(0.98); 
+    transition: transform 1.75s ease-in-out;
+}
+
+.popupContent .popupText > h1 {
+    color: white;
+    font-size: 3em;
+    text-align: center;
+    
+    /* Using multiple layers of shadows for a deeper effect */
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.1),  /* Slight offset shadow */
+        0px 0px 8px rgba(0, 0, 0, 0.2),  /* Soft glow shadow */
+        -1px -1px 0 rgba(255, 255, 255, 0.5); /* Inner light shadow to give a pressed/glossy effect */
+
+    font-weight: bold;
+    
+    /* Using a gradient to give a glossy feel */
+    background: linear-gradient(to bottom, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Using a smooth font-family for a professional look */
+    font-family: 'Arial', sans-serif;
+    opacity: 1; /* Initial opacity is set to 0.5 */
+    transition: opacity 1.75s ease-in-out, transform 1.75s ease-in-out; /* Add opacity to the transition list */
+}
+
+
+.popupContent:hover .popupText .row1{
+    opacity: 1;
+    transform: scaleY(1.2) scaleX(1.2) translateY(-0.25em);
+    transition: opacity 1.75s ease-in-out, transform 1.75s ease-in-out; 
+}
+
+.popupContent:hover .popupText .row2{
+    opacity:1;
+    transform: scaleY(1.2) scaleX(1.2) translateY(0.25em);
+    transition: opacity 1.75s ease-in-out, transform 1.75s ease-in-out; 
+}
+
+.popupContent .popupText > h2 {
+    opacity: 0.5; /* Initial opacity is set to 0.5 */
+    transition: opacity 4s ease-in-out, transform 4s ease-in-out; /* Add opacity to the transition list */
+}
+
+.popupContent:hover .popupText > h2 {
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.2),  /* Slight offset shadow */
+        0px 0px 8px rgba(0, 0, 0, 0.3),  /* Soft glow shadow */
+        -1px -1px 0 rgba(255, 255, 255, 0.5); /* Inner light shadow to give a pressed/glossy effect */
+    opacity: 1; /* Opacity will change to 1 upon hovering */
+    transform: scaleY(1.3) scaleX(1.3);
+}
+
+.popupText {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+}
+
+.popupText {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+}
+
+.popupText > h1 {
+    color: white;
+    opacity: 0.5;
+    font-size: 3em;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Add text shadow */
+    font-weight: bold; /* Make the text bolder */
+}
+
+.popupText > h2 {
+    color: white;
+    opacity: 0.3;
+    text-align: center;
+    font-size: 1.2em;
+    margin: 2em 0;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Add text shadow */
+}
+
+@media screen and (max-width: 768px) {
+    .popupText {
+        display: flex;
+    font-size: x-small;
+    }
+}
+
+@media screen and (min-width: 769px) {
+
+}
+
+@media screen and (min-width: 321px) and (max-width: 480px) {
+    .popupText > h1 {
+        font-size: 0.2em;;
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+
+
+}
+
+@media screen and (min-width: 1201px) {
+   
+
+}

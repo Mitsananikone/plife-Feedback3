@@ -1,0 +1,247 @@
+.fullPageContainer {
+    position: relative;  /* This is crucial for the child absolute-positioned Image */
+    width: 100vw;       /* Viewport width */
+    height: 100vh;      /* Viewport height */
+    overflow: hidden;   /* In case there's any overflow */
+  }
+
+.textContainer {
+    color: black;
+    width: 45%;
+    z-index: 30;
+    overflow: hidden;
+    text-shadow:
+          1px 1px 2px rgba(3, 9, 43, 0.5),
+          /* Highlight */
+          -1px -1px 2px rgba(0, 0, 0, 0.25),
+          /* Top-left shadow */
+          /* 1px -1px 2px rgba(0, 0, 0, 0.25), */
+          /* Top-right shadow */
+          /* -1px 1px 2px rgba(0, 0, 0, 0.25), */
+          /* Bottom-left shadow */
+          0 0 3px rgba(0, 0, 0, 0.1);  
+    
+}
+.textContainerOuter {
+    /* padding-left: 100px; */
+   /* This ensures the content doesn't overflow outside */
+    z-index: 30;
+    height: max-content;
+    width: 90vw;
+    position: absolute;
+    overflow: hidden;  
+}
+/* .textContainerBlock {
+    display: flex-box;
+    width: fit-content;
+    backdrop-filter: blur(5px);
+    margin-top: 10vh;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+} */
+
+.textContainerBlock>h2 {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 2.5rem;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+
+.textContainerBlock>p {
+    padding: 0;
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    text-align: justify;
+
+}
+
+.submitButton {
+    float: right;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 0.25rem;
+    height: 4rem;
+    font-weight: 700;
+    color: #666666;
+    border: 1px solid #777777;
+    vertical-align: middle;
+    white-space: nowrap;
+    background-color: #ffffff;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    opacity: 0.8;
+    z-index: 30;
+}
+
+.submitButton:hover {
+
+    opacity: 0.8;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+    z-index: 30;
+}
+
+.textStretch {
+    font-size: 3rem;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    fill: white;;
+}
+
+.imageContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .imageContainer img {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .blurredBackground {
+    backdrop-filter: blur(5px);  /* Blur the content behind the container */
+    position: absolute;          /* Position it on top of the image */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.3);  /* Add a semi-transparent white overlay to increase contrast */
+    z-index: 1;  /* Ensure it's layered below the text but above the image */
+  }
+  
+
+
+@media screen and (min-width: 1440px) {
+    .textContainer {
+
+        margin-right: 400px;
+        transform: translateX(300px);
+    }
+
+    .textContainerBlock{
+        margin-left: 0px;;
+    }
+
+    .textContainerBlock>p {
+        margin-top: 32px;
+        line-height: 1.8rem;
+        font-size: 1.3rem;
+    }
+
+    .submitButton {
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 1439px) {
+    .textContainer {
+        margin-top: -64px;
+        margin-left: 200px;
+    }
+    .textContainerBlock>p {
+        line-height: 1.4rem;
+        font-size: 1.3rem;
+        margin-top: 64px;
+    }
+    .submitButton {
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .textContainer {
+        margin-top: -80px;
+        margin-right: 150px;
+        width: 60vw;
+    }
+    .textStretch {
+        width: 60vw;
+    }
+
+    .textContainerBlock {
+
+    }
+
+    .textContainerBlock>p {
+        line-height: 1.4rem;
+        font-size: 1.3rem;
+        margin-top: 64px;
+    }
+
+    .submitButton {
+        margin-top: 10px;
+        scale: 0.8;
+    }
+}
+
+@media screen and (max-width: 767px) {
+   
+    .textContainerOuter {
+        margin-right: 10px;
+    }
+    .textContainer {
+        width: 60vw;
+        margin-left: 100px;
+    }
+    .textStretch {
+        width: 60vw;
+    }
+    .textContainerBlock {
+        margin-right: 0px;
+    }
+
+    .textContainerBlock>p {
+        line-height: 1.3rem;
+        font-size: 0.9rem;
+    }
+
+    .submitButton {
+        margin-top: 10px;
+        scale: 0.6;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .textContainerOuter {
+   
+    }
+    .textContainer {
+        width: 60vw;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .textStretch {
+        width: 60vw;
+    }
+    .textContainerBlock {
+        margin-right: 0px;
+    }
+
+    .textContainerBlock>p {
+        margin-top: 0;
+        line-height: 1.3rem;
+        font-size: 0.9rem;
+    }
+
+    .submitButton {
+        margin-top: -10px;
+       scale: 0.6;
+    }
+
+}

@@ -1,0 +1,139 @@
+.iCardContainer {
+    display: flex; 
+    align-items: middle;
+    justify-content: space-between;
+    margin-top: 2rem; 
+    margin-inline: 0; 
+    flex-direction: row; 
+}
+
+
+.iCard {
+    display: inline-block;
+    overflow: visible;
+    position: relative;
+    border-radius: 0.5rem;
+    border-width: 1px;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    transition-duration: 300ms;
+    cursor: pointer;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    opacity: 0.7;
+    align-items: center;
+    justify-content: center;
+    font-size:1em;
+    width: 33%; /* 25% for 4 cards in a row, subtracting margin */
+    margin: 2em;
+    padding: 0.5em;
+
+}
+
+.iCard:hover {
+    transform: scaleY(1.02) scaleX(1.02);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+}
+
+.iCard:hover .iCardTitle p {
+    color: black;
+}
+
+.imgContainer {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    border-width: 1px;
+    border-color: #D1D5DB;
+    width: 100%;  /* Will adapt to the parent's width */
+    height: 16vw; /* Relative height according to width */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.iCardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.iCardTitle {
+    padding: 0;
+    width: 100%;
+    text-align: left;
+    background-color: #ffffff;
+    wrap: nowrap;
+}
+
+.iCardTitle>p {
+    font-size: 1em;
+    font-weight: 600;
+    color: #9CA3AF;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    transition-duration: 300ms;
+}
+
+@media screen and (min-width: 1201px) {
+    .iCardTitle > p {
+        font-size: 1em;
+    }
+    .iCard {
+        /* border: 1px solid red; */
+        margin-bottom: 4em;
+    }
+}
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    .iCardTitle > p {
+        font-size: 0.65em;
+    }
+    .iCard {
+        /* border: 1px solid red; */
+        margin-bottom: 4em;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .iCardTitle > p {
+        font-size: 0.6em;
+    }
+    .iCard {
+        scale: 1.2;
+        margin-bottom: 4em;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .iCardTitle > p {
+        font-size: 0.45em;
+    }
+    .iCard {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 321px) and (max-width: 480px) {
+    .itCardTitle > p {
+        font-size: 0.3em;
+    }
+    .iCard {
+        display: none;
+      
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+    .iCardTitle > p {
+        font-size: 0.6em;
+    }
+    .iCard {
+        display: none;
+      
+    }
+}

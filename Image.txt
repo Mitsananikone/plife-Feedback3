@@ -1,0 +1,46 @@
+import { CldImage } from "next-cloudinary";
+
+
+ const [windowWidth, setWindowWidth] = useState(0);
+
+  const cloudinaryLoader = ({ src, width, quality }) => {
+    return `https://res.cloudinary.com/phoeniquelife/image/upload/w_${width},q_${quality}/${src}`;
+  };
+
+useEffect(() => {
+    const updateWidth = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    updateWidth();
+    window.addEventListener('resize', updateWidth);
+    return () => {
+      window.removeEventListener('resize', updateWidth);
+    };
+  }, []);
+
+  const computedHeight = (windowWidth) * 0.75;
+  
+  
+  <CldImage
+cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME} 
+      width={windowWidth} 
+      height={computedHeight}
+      src="about/aboutBackground.webp" />
+
+
+https://res.cloudinary.com/phoeniquelife/image/upload/v1696267479/resources/resourceBanner.webp
+
+
+
+
+
+      text-shadow:
+          1px 1px 2px rgba(3, 9, 43, 0.5),
+          /* Highlight */
+          -1px -1px 2px rgba(0, 0, 0, 0.25),
+          /* Top-left shadow */
+          /* 1px -1px 2px rgba(0, 0, 0, 0.25), */
+          /* Top-right shadow */
+          /* -1px 1px 2px rgba(0, 0, 0, 0.25), */
+          /* Bottom-left shadow */
+          0 0 3px rgba(0, 0, 0, 0.1);  
