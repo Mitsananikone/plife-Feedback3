@@ -93,11 +93,14 @@ const Contacts = () => {
         <link rel="preload" href={imageUrl} as="image" />
       </Head>
       <CldImage
-      style={{marginTop: '-10vh'}}
-cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME} 
-      width={windowWidth} 
-      height={computedHeight}
-      src="contacts/contactsBackground.webp" />
+              cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
+              width={3000}
+              height={1688}
+              className={styles.imageStyle} /* Applying CSS style */
+              src="contacts/contactsBackground.webp"
+              alt="Contacts Background"
+       />
+
 
     <div className={styles.contactPage}>
 

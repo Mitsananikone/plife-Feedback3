@@ -52,12 +52,14 @@ function ProceduresPage() {
     <div className="background">
       <div className={styles.backgroundImage}></div>
       <CldImage
-cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
-       className={styles.cldImageFullscreen}
-       width={windowWidth}
-       height={windowHeight}
-       src="procedures/proceduresBackground.webp"
-      />
+              cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
+              width={3000}
+              height={1688}
+              className={styles.imageStyle} /* Applying CSS style */
+              src="procedures/proceduresBackground.webp"
+              alt="Procedures Background"
+       />
+    
 
       <div className={styles.procedureComponent}>
         <div ref={containerRef} className={styles.proceduresHighlight}>

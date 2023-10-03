@@ -5,8 +5,6 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Slick from "@/components/home/slick/slick";
 import AnimInfoCard from "@/components/home/animInfoCard/animInfoCard";
-
-import Head from "next/head";
 import styles from "./landingPage.module.css";
 import { CldImage } from "next-cloudinary";
 

@@ -84,10 +84,13 @@ function AboutPage() {
       </Head>
 
       <CldImage
-      cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME} 
-      width={windowWidth} 
-      height={computedHeight}
-      src="about/aboutBackground.webp" />
+              cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
+              width={3000}
+              height={1688}
+              className={styles.imageStyle} /* Applying CSS style */
+              src="about/aboutBackground.webp"
+              alt="About Background"
+       />
 
       {/* <div className={styles.blurredBackground}></div> */}
       <div className={styles.textContainerOuter}>
