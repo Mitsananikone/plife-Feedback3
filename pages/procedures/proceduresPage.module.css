@@ -21,6 +21,12 @@
     height: 100vh;
     z-index: -1; 
   }
+  
+  .imageStyle {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+}
 
   .backgroundImage {
     position: absolute;
