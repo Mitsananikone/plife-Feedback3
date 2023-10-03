@@ -30,6 +30,18 @@ export default function App({ Component, pageProps }) {
     <div className="appWrapper">
       <Head>
         <title>Phoenique Life</title>
+        {/* Google Analytics Script */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HMTBMF351"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-5HMTBMF351');
+            `,
+          }}
+        />
       </Head>
       <Navbar />
       <div className="contentWrapper">
