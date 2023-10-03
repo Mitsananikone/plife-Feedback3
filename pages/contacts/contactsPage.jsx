@@ -88,11 +88,12 @@ const Contacts = () => {
 
   return (
     <div
-    className="background">
+    className="background" >
       <Head>
         <link rel="preload" href={imageUrl} as="image" />
       </Head>
       <CldImage
+      style={{marginTop: '-10vh'}}
 cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME} 
       width={windowWidth} 
       height={computedHeight}

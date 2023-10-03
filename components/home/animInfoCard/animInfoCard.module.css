@@ -233,7 +233,7 @@
 /* ORANGE */
 @media screen and (max-width: 1439px) {
   .card {
-    margin-top: 100px;
+    margin-top: -100px;
     width: 40vw;
     height: 300px;
     overflow: hidden;  /* Hide the overflow content */
@@ -261,6 +261,21 @@
   }
   
 }
+
+/* @media screen and (min-width: 992px) {
+  .section_content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .package {
+    flex: 0 0 calc(33.3333% - 20px); 
+    margin: 10px; 
+  }
+} */
+
 /* YELLOW */
 @media screen and (max-width: 991px) {
    .card {
@@ -295,12 +310,12 @@
 /* GREEN */
 @media screen and (max-width: 767px) {
   .card {
-
     margin-top: 10px;
     width: 40vw;
     overflow: hidden;  /* Hide the overflow content */
     position: relative; /* Establish a stacking context for cardContent */
   }
+
 
   .cardContent {
     transform: translateY(calc(100% - 1.5em));  
@@ -311,12 +326,11 @@
     bottom: 0;  /* Start it from the bottom of card */
     left: 0;  /* Ensure it sticks to the left edge */
     right: 0; /* Ensure it spans the full width of the card */
-
+    
   }
 
-
   .cardTitle {
-    margin-bottom: -1.5em;  /* This is the offset we need to keep it visible */
+    margin-bottom: 0;  /* This is the offset we need to keep it visible */
   }
 
   .card:hover .cardContent {

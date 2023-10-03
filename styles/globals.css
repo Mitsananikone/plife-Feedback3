@@ -43,17 +43,18 @@ a {
 
 
 .background {
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100vw;
-  min-height: 100vh;
+  min-height: 90vh;
   height: 90vh;
   position: relative;
   z-index: -9;
   height: 100vh;
   overflow: hidden;
-
+  margin-top: -10vh;
 }
 
 .backgroundDark {

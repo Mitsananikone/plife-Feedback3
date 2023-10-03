@@ -10,12 +10,13 @@
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 2s; /* this will give the fade effect */
-  }
-  
-  .visible {
+    transition: opacity 2s;
+    /* this will give the fade effect */
+}
+
+.visible {
     opacity: 1;
-  }
+}
 
 
 .imageContainer {
@@ -24,9 +25,24 @@
     /* Full viewport height */
     width: 100vw;
     /* Full width of its parent, adjust as necessary */
-    border: 3px solid blue;
+
     position: relative;
     overflow: hidden;
+}
+
+.imageStyle {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.imageStyleSection1 {
+    height: 100vh;
+    /* Full height of the viewport */
+    width: 100%;
+    /* Auto width to maintain aspect ratio */
+    object-fit: cover;
+    /* Cover the container */
 }
 
 .bannerContainer {
@@ -61,7 +77,6 @@
 .section_text {
     flex: 1;
     min-width: 50%;
-    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -122,7 +137,7 @@
 .landingPage .section .packages {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 
 .landingPage .section .package {
@@ -153,7 +168,6 @@
     font-family: 'Roboto', sans-serif;
     margin-top: 100px;
     text-align: center;
-
     font-size: 2em;
     display: block;
     font-weight: 900;
@@ -184,7 +198,21 @@
     }
 
     .landingPage .section .packages {
-        margin-top: 100px;
+        margin-top: 0px;
+    }
+
+    .section_content {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .package {
+        flex: 0 0 calc(33.3333% - 20px);
+        /* assuming you want 10px gap between the cards */
+        margin: 10px;
+        /* optional: if you want some space around each card */
     }
 
 }
@@ -198,10 +226,47 @@
 
     .landingPage .section .packages {
         margin-top: 100px;
+    }
 
+    .packages {
+        margin-top: 200px;
+    }
+
+    .section_text {
+        margin-top: 80px;
+    }
+
+    .section_content {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .package {
+        flex: 0 0 calc(33.3333% - 20px);
+        /* assuming you want 10px gap between the cards */
+        margin: 10px;
+        /* optional: if you want some space around each card */
     }
 
 
+}
+
+@media screen and (min-width: 992px) {
+    .section_content {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .package {
+        flex: 0 0 calc(33.3333% - 20px);
+        /* assuming you want 10px gap between the cards */
+        margin: 10px;
+        /* optional: if you want some space around each card */
+    }
 }
 
 /* YELLOW */
@@ -210,6 +275,16 @@
         margin-top: 20em;
         /* border: 1px solid cyan; */
     }
+
+    .imageStyleSection1 {
+        height: 300vh;
+        /* Full height of the viewport */
+        width: 100%;
+        /* Auto width to maintain aspect ratio */
+        object-fit: cover;
+        /* Cover the container */
+    }
+    
 
     .section {
         padding-inline: 4em;
@@ -265,6 +340,12 @@
         width: 85%;
         padding: 15px 0;
     }
+
+    .sectionTitle {
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+
 }
 
 /* BLUE */
@@ -274,7 +355,6 @@
     }
 
     #section1 {
-        padding-top: 100px;
         height: auto;
     }
 
@@ -282,14 +362,19 @@
         padding-inline: 1em;
     }
 
+    .section_text {
+        margin-top: 100px;
+    }
+
     .section_text>h2 {
         font-size: 2em;
-        margin-bottom: 50px;
+        margin-bottom: 0px;
         z-index: 9;
         font-weight: bold;
     }
 
     .section_text p {
+        margin-top: 80px;
         color: white;
         font-size: 1em;
         line-height: 2em;
@@ -299,8 +384,8 @@
     }
 
 
-    .landingPage .section .packages {
-        margin-top: 100px;
+    .landingPage .section {
+
         flex-direction: column;
         align-items: center;
     }
@@ -310,4 +395,14 @@
         padding: 0;
 
     }
+
+    .sectionTitle {
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+
+    .packages {
+        margin-top: -80px;
+    }
+
 }

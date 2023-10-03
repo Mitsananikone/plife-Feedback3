@@ -75,24 +75,24 @@ const Slideshow = () => {
 
   return (
     <section>
-     <div className={styles.imageContainer}>
-   {images.map((img, index) => (
-      <div
-         key={img}
-         className={`${styles.landingContainer} ${
-           index === currentImageIndex ? styles.visible : ""
-         }`}
-      >
-         <CldImage
-            cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
-              width={computedWidth*1.6}
-              height={windowHeight*1.6}
+      <div className={styles.imageContainer}>
+        {images.map((img, index) => (
+          <div
+            key={img}
+            className={`${styles.landingContainer} ${
+              index === currentImageIndex ? styles.visible : ""
+            }`}
+          >
+            <CldImage
+              cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
+              width={3000}
+              height={1688}
+              className={styles.imageStyle} /* Applying CSS style */
               src={img}
               alt={`Slideshow image ${index + 1}`}
             />
           </div>
         ))}
-
         <div className={styles.slickContainerHome}>
           <Slick />
         </div>
@@ -103,7 +103,7 @@ const Slideshow = () => {
 
 const LandingPage = () => {
   const [windowWidth, setWindowWidth] = useState(0);
-  
+
   useEffect(() => {
     const updateDimensions = () => {
       setWindowWidth(window.innerWidth);
@@ -115,24 +115,29 @@ const LandingPage = () => {
     };
   }, []);
 
-   const computedHeight = windowWidth * 0.75;
+  const computedHeight = windowWidth * 0.75;
 
   return (
     <div className={styles.landingPage}>
       <Slideshow />
       <FadeInSection>
         <section className={styles.section} id={styles.section1}>
-          <div className={styles.section_image}>
-            <CldImage
-cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
-              width={windowWidth}
-              height={computedHeight}
-              limit={true}
-              src="home/section1Background.webp"
-            />
-            <h2 className={styles.sectionTitle} style={{ zIndex: "99999" }}>
+        <div className={styles.section_text} style={{marginTop: '-20px'}}>
+        <h2 className={styles.sectionTitle} >
               Exclusive Plastic Surgery Packages
-            </h2>
+            </h2> 
+          <div className={styles.section_image}>
+             <CldImage
+              cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
+              width={3000}
+              height={1688}
+              className={styles.imageStyleSection1} /* Applying CSS style */
+              src="home/section1Background.webp"
+              alt="section 1 background"
+            />
+     
+
+            </div>
           </div>
 
           <motion.div
@@ -140,7 +145,7 @@ cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
-            <div className={styles.packages}>
+            <div className={styles.packages} style={{marginTop: '-80px'}}>
               <motion.div
                 className={styles.package}
                 initial={{ y: 10, opacity: 0 }}
@@ -180,19 +185,22 @@ cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
                 />
               </motion.div>
             </div>
+            
           </motion.div>
+  
         </section>
       </FadeInSection>
 
       <FadeInSection>
         <section className={styles.section} id={styles.section2}>
           <div className={styles.section_image}>
-            <CldImage
-cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
-              width={windowWidth}
-              height={computedHeight}
-              limit="true"
+             <CldImage
+              cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
+              width={3000}
+              height={1688}
+              className={styles.imageStyle} /* Applying CSS style */
               src="home/section2Background.webp"
+              alt="section 2 background"
             />
           </div>
           <div className={styles.section_text}>
@@ -212,12 +220,13 @@ cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
       <FadeInSection>
         <section className={styles.section} id={styles.section3}>
           <div className={styles.section_image}>
-            <CldImage
-cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
-              width={windowWidth}
-              height={computedHeight}
-              limit={true}
+          <CldImage
+              cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
+              width={3000}
+              height={1688}
+              className={styles.imageStyle} /* Applying CSS style */
               src="home/section3Background.webp"
+              alt="section 3 background"
             />
           </div>
           <div className={styles.section_text}>
@@ -237,12 +246,13 @@ cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
       <FadeInSection>
         <section className={styles.section} id={styles.section4}>
           <div className={styles.section_image}>
-            <CldImage
-cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
-              width={windowWidth}
-              height={computedHeight}
-              limit={true}
+          <CldImage
+              cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
+              width={3000}
+              height={1688}
+              className={styles.imageStyle} /* Applying CSS style */
               src="home/section4Background.webp"
+              alt="section 4 background"
             />
           </div>
           <div className={styles.section_text}>
