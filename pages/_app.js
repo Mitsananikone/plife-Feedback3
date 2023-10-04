@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }) {
   useEffect(() => {
     async function initializeMarker() {
       const widget = await markerSDK.loadWidget({
-        project: process.env.NEXT_PUBLIC_MARKUP_ID,
+        project: process.env.NEXT_PUBLIC_API_KEY,
       });
     }
 
