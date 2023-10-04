@@ -32,6 +32,7 @@ export default function App({ Component, pageProps }) {
         <title>Phoenique Life</title>
         {/* Google Analytics Script */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HMTBMF351"></script>
+           <script type="text/javascript" src="https://www.bugherd.com/sidebarv2.js?apikey=6chxm6sb4lrhrex4yq6ocg" async="true"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
