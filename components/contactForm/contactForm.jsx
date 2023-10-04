@@ -46,7 +46,7 @@ function ContactForm() {
         cosmetic surgery packages tailored for you.
       </p>
 
-      <form className={styles.contactForm} onSubmit={handleSubmit} >
+      <form className={styles.contactForm} onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Full Name"
@@ -67,9 +67,8 @@ function ContactForm() {
           name="phoneNumber"
           onChange={handleChange}
         />
-
+        <p>Procedures of Interest:</p>
         <div className={styles.checkboxes}>
-          <p>Procedures of Interest:</p>
           <br />
           {[
             "Breast augmentation",

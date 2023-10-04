@@ -10,7 +10,6 @@ import { CldImage } from "next-cloudinary";
 
 function ProceduresPage() {
   const [windowWidth, setWindowWidth] = useState(0);
-  const [windowHeight, setWindowHeight] = useState(0);
   const titleRef = useRef(null);
   const containerRef = useRef(null);
 
@@ -19,19 +18,24 @@ function ProceduresPage() {
   };
 
   useEffect(() => {
-    const updateDimensions = () => {
+    const updateWidth = () => {
       setWindowWidth(window.innerWidth);
-      setWindowHeight(window.innerHeight);
     };
-    updateDimensions();
-
-    window.addEventListener("resize", updateDimensions);
+    updateWidth();
+    window.addEventListener('resize', updateWidth);
     return () => {
-      window.removeEventListener("resize", updateDimensions);
+      window.removeEventListener('resize', updateWidth);
     };
   }, []);
 
   const computedHeight = windowWidth * 0.75;
+
+  console.log("windowWidth: " + windowWidth);
+  const imageUrl = cloudinaryLoader({
+    src: "procedures/proceduresBackground.webp",
+    width: windowWidth,
+    quality: 80 // you can define the quality parameter as per your requirement
+  });
 
   const fadeIn = {
     hidden: { opacity: 0.7 }, // Words are dimmed
@@ -50,16 +54,20 @@ function ProceduresPage() {
 
   return (
     <div className="background">
+       
       <div className={styles.backgroundImage}></div>
+      <Head>
+        <link rel="preload" href={imageUrl} as="image" />
+      </Head>
       <CldImage
-              cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
-              width={3000}
-              height={1688}
-              className={styles.imageStyle} /* Applying CSS style */
-              src="procedures/proceduresBackground.webp"
-              alt="Procedures Background"
-       />
-    
+    cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
+    width={3000}
+    height={1688}
+    style={{ width: '3000px', height: '1688px' }} // <-- Add this
+    src="procedures/proceduresBackground.webp"
+    alt="Procedures Background"
+/>
+
 
       <div className={styles.procedureComponent}>
         <div ref={containerRef} className={styles.proceduresHighlight}>

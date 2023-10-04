@@ -5,15 +5,13 @@
     align-items: center;
     justify-content: center; /* centers content vertically */
     width: 100%;
+    height: 100%;
+    border: 0; 
     padding: 2rem;
-}
+    position: relative;
+    z-index: 2; 
 
-.imageStyle {
-    height: 100vh;
-    width: 100%;
-    object-fit: cover;
 }
-
 
 .section {
     display: flex;
@@ -21,8 +19,7 @@
     align-items: center;
     border-radius: 0;
     overflow: hidden;
-    max-height: 55vh;
-    border: 1px solid red;
+    /* max-height: 55vh; */
 }
 
 .sectionImage {
@@ -110,6 +107,16 @@
     color: #4d4d4d;
 }
 
+.imageStyle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
 
 .contactForm {
     display: flex;
@@ -118,6 +125,7 @@
     max-width: 300px; /* control the width of the form */
     width: 100%; /* ensures it takes full width if there's space */
     margin: 0 auto; /* center the form contents */
+    border: 1px solid black;
 }
 
 /* .contactForm input,
@@ -186,27 +194,37 @@
 
 .mapAndFormSection {
     display: flex;
-    width: 100%;
+    width: 90vw;;
+    height: 70vh;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* allows the items to wrap to next line if space is limited */
+    flex-wrap: wrap;
 }
 
-  .mapContainer {
-    width: 66%;
+.mapContainer {
+    position: relative;
+    width: 66.66%; /* Ensure it takes full width */
+    height: 100%; /* Ensure it takes full height */
+    padding: 0;  /* Remove padding to make map cover all area */
+}
+
+.mapContainer iframe {
+    width: 100%;
     height: 100%;
+    border: 0; /* Remove iframe border */
 }
 
 .formContainer {
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    padding: 20px; /* add some padding */
+    width: 33.33%;
+    flex: 1;  /* take 33% width */
+    position: relative; /* new line */
+    padding: 20px; /* add padding if you need */
+
 }
 
 .mapContainer, .formContainer {
     flex: 1;  
-    min-height: 70vh; /* change height to min-height */
+    min-height: 80vh; /* change height to min-height */
     padding: 10px; 
 }
 
@@ -233,8 +251,39 @@
 }
 
 
+
+
+
+
+@media screen and (min-width: 1440px) {
+    .contactPage {
+    }
+    .mapAndFormSection {
+        margin-top: 200px;
+        height: 80vh;
+    }
+    .formContainer {
+        height: 80vh;
+    }
+}
+
+
+
+@media screen and (max-width: 1439px) {
+    .contactPage {
+    }
+    .mapAndFormSection {
+        margin-top: 200px;
+        height: 80vh;
+    }
+    .formContainer {
+        height: 80vh;
+    }
+}
+
 /* YELLOW */
 @media screen and (max-width: 991px) {
+    
 .iconContainer {
     scale: 1;
 }
@@ -242,6 +291,9 @@
 
 /* GREEN */
 @media screen and (max-width: 767px) {
+    .mapContainer, .formContainer {
+        width: 100%;
+    }
     .iconContainer {
         scale: 1;
     }
@@ -249,6 +301,9 @@
         font-size: 0.1rem;
         opacity: 0;
     }
+    .mapContainer {
+        display: none;  /* Hide the map container */
+      }
 }
 
 /* BLUE */
