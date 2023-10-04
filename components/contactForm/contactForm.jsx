@@ -33,9 +33,28 @@ function ContactForm() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    
+    try {
+      const res = await fetch('/api/sendEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (!res.ok) {
+        const errorData = await res.text(); // Get error message from server
+        throw new Error(`Email not sent. Server response: ${errorData}`);
+      }
+      
+      alert('Email sent successfully');
+    } catch (error) {
+      alert(error.message);
+      console.error(error); // Log detailed error to console
+    }
   };
 
   return (

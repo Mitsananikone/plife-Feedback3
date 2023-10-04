@@ -51,7 +51,7 @@ a {
   min-height: 90vh;
   height: 90vh;
   position: relative;
-  z-index: -9;
+  /* z-index: -999999; */
   height: 100vh;
   overflow: hidden;
   margin-top: -10vh;
